@@ -1,0 +1,957 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55287A8622238FD700F7F6B0 /* quicClientMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55287A8522238FD700F7F6B0 /* quicClientMain.cpp */; };
+		55287A922223904000F7F6B0 /* LQQuicSession.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55287A8F2223904000F7F6B0 /* LQQuicSession.cpp */; settings = {COMPILER_FLAGS = "-fno-rtti"; }; };
+		55287A932223904000F7F6B0 /* QuicTestCase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55287A902223904000F7F6B0 /* QuicTestCase.cpp */; settings = {COMPILER_FLAGS = "-fno-rtti"; }; };
+		55287A9C2223E2C600F7F6B0 /* LQQuicStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55287A9A2223E2C600F7F6B0 /* LQQuicStream.cpp */; settings = {COMPILER_FLAGS = "-fno-rtti"; }; };
+		55287AA52223E7DB00F7F6B0 /* LQQuicClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55287AA32223E7DB00F7F6B0 /* LQQuicClient.cpp */; settings = {COMPILER_FLAGS = "-fno-rtti"; }; };
+		55287AA9222404F800F7F6B0 /* quic_client_base.cc in Sources */ = {isa = PBXBuildFile; fileRef = 55287AA7222404F800F7F6B0 /* quic_client_base.cc */; };
+		55287AB222240B7900F7F6B0 /* quic_client_message_loop_network_helper.cc in Sources */ = {isa = PBXBuildFile; fileRef = 55287AAA22240B7800F7F6B0 /* quic_client_message_loop_network_helper.cc */; };
+		55287AB422240B7900F7F6B0 /* quic_url.cc in Sources */ = {isa = PBXBuildFile; fileRef = 55287AAC22240B7900F7F6B0 /* quic_url.cc */; };
+		5564DD1222268F9700FF07DF /* libnet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD1122268F9600FF07DF /* libnet.a */; };
+		5564DD1422268FF300FF07DF /* libbase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD1322268FF200FF07DF /* libbase.a */; };
+		5564DD162226902300FF07DF /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD152226902300FF07DF /* CoreFoundation.framework */; };
+		5564DD18222690B500FF07DF /* libboringssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD17222690B500FF07DF /* libboringssl.a */; };
+		5564DD1A2226914B00FF07DF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD192226914A00FF07DF /* CFNetwork.framework */; };
+		5564DD1C2226915000FF07DF /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD1B2226914F00FF07DF /* CoreServices.framework */; };
+		5564DD1E2226915A00FF07DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD1D2226915A00FF07DF /* Foundation.framework */; };
+		5564DD202226915F00FF07DF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD1F2226915F00FF07DF /* Security.framework */; };
+		5564DD222226916900FF07DF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD212226916900FF07DF /* SystemConfiguration.framework */; };
+		5564DD242226917100FF07DF /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD232226917100FF07DF /* libresolv.tbd */; };
+		5564DD262226917F00FF07DF /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD252226917F00FF07DF /* ApplicationServices.framework */; };
+		5564DD282226918E00FF07DF /* libbsm.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD272226918E00FF07DF /* libbsm.tbd */; };
+		5564DD2C222691BE00FF07DF /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD2B222691BE00FF07DF /* IOKit.framework */; };
+		5564DD2E2226920100FF07DF /* liburl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD2D2226920100FF07DF /* liburl.a */; };
+		5564DD30222692D300FF07DF /* libevent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD2F222692D200FF07DF /* libevent.a */; };
+		5564DD362226A9F800FF07DF /* libbase_i18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD352226A9F800FF07DF /* libbase_i18n.a */; };
+		5564DD382226AA1400FF07DF /* libcrcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD372226AA1400FF07DF /* libcrcrypto.a */; };
+		5564DD3B2226AB4000FF07DF /* libicuuc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD392226AB4000FF07DF /* libicuuc.a */; };
+		5564DD3C2226AB4000FF07DF /* libicui18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD3A2226AB4000FF07DF /* libicui18n.a */; };
+		5564DD3E2226AB8300FF07DF /* libprotobuf_lite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD3D2226AB8300FF07DF /* libprotobuf_lite.a */; };
+		5564DD402226AF5000FF07DF /* libboringssl_asm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD3F2226AF5000FF07DF /* libboringssl_asm.a */; };
+		5564DD422226B05A00FF07DF /* libbase_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD412226B05900FF07DF /* libbase_static.a */; };
+		5564DD442226B06000FF07DF /* libmodp_b64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD432226B06000FF07DF /* libmodp_b64.a */; };
+		5564DD462226B1F900FF07DF /* libdynamic_annotations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD452226B1F900FF07DF /* libdynamic_annotations.a */; };
+		5564DD482226B1FF00FF07DF /* libnetdns.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD472226B1FE00FF07DF /* libnetdns.a */; };
+		5564DD4A2226B20600FF07DF /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD492226B20600FF07DF /* AppKit.framework */; };
+		5564DD4B2227808E00FF07DF /* libchrome_zlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD3322269A4C00FF07DF /* libchrome_zlib.a */; };
+		5564DD4D222780B100FF07DF /* libzlib_x86_simd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD4C222780B100FF07DF /* libzlib_x86_simd.a */; };
+		5564DD4F222783F500FF07DF /* libzlibex.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD4E222783F500FF07DF /* libzlibex.a */; };
+		5564DD522227857D00FF07DF /* libc++abi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD502227857D00FF07DF /* libc++abi.a */; };
+		5564DD532227857E00FF07DF /* libc++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD512227857D00FF07DF /* libc++.a */; };
+		5564DD55222788FC00FF07DF /* libSystem.B.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD54222788FC00FF07DF /* libSystem.B.tbd */; };
+		9700D109230EB7D700234FB3 /* LQQuicSeverSession.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9700D107230EB7D700234FB3 /* LQQuicSeverSession.cpp */; };
+		9700D10A230F923200234FB3 /* quic_simple_server_packet_writer.cc in Sources */ = {isa = PBXBuildFile; fileRef = 972721A3230BC9C9000D4FAD /* quic_simple_server_packet_writer.cc */; };
+		9700D10B230F927300234FB3 /* chlo_extractor.cc in Sources */ = {isa = PBXBuildFile; fileRef = 972721B8230BE68A000D4FAD /* chlo_extractor.cc */; };
+		9700D10C230F927A00234FB3 /* quic_backend_response.cc in Sources */ = {isa = PBXBuildFile; fileRef = 972721BA230BE68A000D4FAD /* quic_backend_response.cc */; };
+		9700D10D230F92AF00234FB3 /* stateless_rejector.cc in Sources */ = {isa = PBXBuildFile; fileRef = 972721B9230BE68A000D4FAD /* stateless_rejector.cc */; };
+		972721D2230BEF21000D4FAD /* QuicTestServerCase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9727219F230BA0AB000D4FAD /* QuicTestServerCase.cpp */; settings = {COMPILER_FLAGS = "-fno-rtti"; }; };
+		972721D6230BEF21000D4FAD /* quic_simple_dispatcher.cc in Sources */ = {isa = PBXBuildFile; fileRef = 972721A8230BCC9D000D4FAD /* quic_simple_dispatcher.cc */; };
+		972721D7230BEF21000D4FAD /* source_address_token.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 972721C5230BE6AC000D4FAD /* source_address_token.pb.cc */; settings = {COMPILER_FLAGS = "-fno-rtti"; }; };
+		972721DB230BEF21000D4FAD /* crypto_server_config.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 972721C1230BE6AC000D4FAD /* crypto_server_config.pb.cc */; settings = {COMPILER_FLAGS = "-fno-rtti"; }; };
+		972721DD230BEF21000D4FAD /* quic_time_wait_list_manager.cc in Sources */ = {isa = PBXBuildFile; fileRef = 972721CA230BE7D6000D4FAD /* quic_time_wait_list_manager.cc */; };
+		972721E3230BEF21000D4FAD /* quic_simple_server_session_helper.cc in Sources */ = {isa = PBXBuildFile; fileRef = 972721A4230BC9C9000D4FAD /* quic_simple_server_session_helper.cc */; };
+		972721E4230BEF21000D4FAD /* cached_network_parameters.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = 972721C3230BE6AC000D4FAD /* cached_network_parameters.pb.cc */; settings = {COMPILER_FLAGS = "-fno-rtti"; }; };
+		972721E9230BEF21000D4FAD /* quic_dispatcher.cc in Sources */ = {isa = PBXBuildFile; fileRef = 972721B2230BD5A1000D4FAD /* quic_dispatcher.cc */; };
+		972721EA230BEF21000D4FAD /* quic_simple_server.cc in Sources */ = {isa = PBXBuildFile; fileRef = 9727219C230BA06D000D4FAD /* quic_simple_server.cc */; };
+		972721EC230BEF21000D4FAD /* libSystem.B.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD54222788FC00FF07DF /* libSystem.B.tbd */; };
+		972721ED230BEF21000D4FAD /* libc++abi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD502227857D00FF07DF /* libc++abi.a */; };
+		972721EE230BEF21000D4FAD /* libc++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD512227857D00FF07DF /* libc++.a */; };
+		972721EF230BEF21000D4FAD /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD492226B20600FF07DF /* AppKit.framework */; };
+		972721F0230BEF21000D4FAD /* libbsm.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD272226918E00FF07DF /* libbsm.tbd */; };
+		972721F1230BEF21000D4FAD /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD2B222691BE00FF07DF /* IOKit.framework */; };
+		972721F2230BEF21000D4FAD /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD252226917F00FF07DF /* ApplicationServices.framework */; };
+		972721F3230BEF21000D4FAD /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD232226917100FF07DF /* libresolv.tbd */; };
+		972721F4230BEF21000D4FAD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD212226916900FF07DF /* SystemConfiguration.framework */; };
+		972721F5230BEF21000D4FAD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD1F2226915F00FF07DF /* Security.framework */; };
+		972721F6230BEF21000D4FAD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD1D2226915A00FF07DF /* Foundation.framework */; };
+		972721F7230BEF21000D4FAD /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD1B2226914F00FF07DF /* CoreServices.framework */; };
+		972721F8230BEF21000D4FAD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD192226914A00FF07DF /* CFNetwork.framework */; };
+		972721F9230BEF21000D4FAD /* libboringssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD17222690B500FF07DF /* libboringssl.a */; };
+		972721FA230BEF21000D4FAD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD152226902300FF07DF /* CoreFoundation.framework */; };
+		972721FB230BEF21000D4FAD /* libbase_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD412226B05900FF07DF /* libbase_static.a */; };
+		972721FC230BEF21000D4FAD /* libbase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD1322268FF200FF07DF /* libbase.a */; };
+		972721FD230BEF21000D4FAD /* libmodp_b64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD432226B06000FF07DF /* libmodp_b64.a */; };
+		972721FE230BEF21000D4FAD /* libnet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD1122268F9600FF07DF /* libnet.a */; };
+		972721FF230BEF21000D4FAD /* liburl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD2D2226920100FF07DF /* liburl.a */; };
+		97272200230BEF21000D4FAD /* libevent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD2F222692D200FF07DF /* libevent.a */; };
+		97272201230BEF21000D4FAD /* libbase_i18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD352226A9F800FF07DF /* libbase_i18n.a */; };
+		97272202230BEF21000D4FAD /* libdynamic_annotations.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD452226B1F900FF07DF /* libdynamic_annotations.a */; };
+		97272203230BEF21000D4FAD /* libcrcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD372226AA1400FF07DF /* libcrcrypto.a */; };
+		97272204230BEF21000D4FAD /* libnetdns.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD472226B1FE00FF07DF /* libnetdns.a */; };
+		97272205230BEF21000D4FAD /* libicuuc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD392226AB4000FF07DF /* libicuuc.a */; };
+		97272206230BEF21000D4FAD /* libicui18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD3A2226AB4000FF07DF /* libicui18n.a */; };
+		97272207230BEF21000D4FAD /* libprotobuf_lite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD3D2226AB8300FF07DF /* libprotobuf_lite.a */; };
+		97272208230BEF21000D4FAD /* libboringssl_asm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD3F2226AF5000FF07DF /* libboringssl_asm.a */; };
+		97272209230BEF21000D4FAD /* libchrome_zlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD3322269A4C00FF07DF /* libchrome_zlib.a */; };
+		9727220A230BEF21000D4FAD /* libzlib_x86_simd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD4C222780B100FF07DF /* libzlib_x86_simd.a */; };
+		9727220B230BEF21000D4FAD /* libzlibex.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564DD4E222783F500FF07DF /* libzlibex.a */; };
+		97272212230BEF98000D4FAD /* quicServerMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97272211230BEF98000D4FAD /* quicServerMain.cpp */; };
+		973CE54B2316A0A200D593B1 /* QuicConnectionTraceVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 973CE5492316A0A200D593B1 /* QuicConnectionTraceVisitor.cpp */; };
+		973CE54C2316A0A200D593B1 /* QuicConnectionTraceVisitor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 973CE5492316A0A200D593B1 /* QuicConnectionTraceVisitor.cpp */; };
+		978307BF231383BC00FDA0C2 /* LQQuicStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55287A9A2223E2C600F7F6B0 /* LQQuicStream.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		55287A8222238FD700F7F6B0 /* quicClient */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = quicClient; sourceTree = BUILT_PRODUCTS_DIR; };
+		55287A8522238FD700F7F6B0 /* quicClientMain.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = quicClientMain.cpp; sourceTree = "<group>"; };
+		55287A8E2223904000F7F6B0 /* QuicTestCase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = QuicTestCase.hpp; sourceTree = "<group>"; };
+		55287A8F2223904000F7F6B0 /* LQQuicSession.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LQQuicSession.cpp; sourceTree = "<group>"; };
+		55287A902223904000F7F6B0 /* QuicTestCase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuicTestCase.cpp; sourceTree = "<group>"; };
+		55287A912223904000F7F6B0 /* LQQuicSession.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LQQuicSession.hpp; sourceTree = "<group>"; };
+		55287A952223914D00F7F6B0 /* libcronet.74.0.3704.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcronet.74.0.3704.0.dylib; path = "third-party/quic/libcronet.74.0.3704.0.dylib"; sourceTree = "<group>"; };
+		55287A9A2223E2C600F7F6B0 /* LQQuicStream.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LQQuicStream.cpp; sourceTree = "<group>"; };
+		55287A9B2223E2C600F7F6B0 /* LQQuicStream.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LQQuicStream.hpp; sourceTree = "<group>"; };
+		55287A9D2223E4E600F7F6B0 /* QuicCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuicCommon.h; sourceTree = "<group>"; };
+		55287AA32223E7DB00F7F6B0 /* LQQuicClient.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LQQuicClient.cpp; sourceTree = "<group>"; };
+		55287AA42223E7DB00F7F6B0 /* LQQuicClient.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LQQuicClient.hpp; sourceTree = "<group>"; };
+		55287AA7222404F800F7F6B0 /* quic_client_base.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quic_client_base.cc; sourceTree = "<group>"; };
+		55287AA8222404F800F7F6B0 /* quic_client_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quic_client_base.h; sourceTree = "<group>"; };
+		55287AAA22240B7800F7F6B0 /* quic_client_message_loop_network_helper.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quic_client_message_loop_network_helper.cc; sourceTree = "<group>"; };
+		55287AAC22240B7900F7F6B0 /* quic_url.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quic_url.cc; sourceTree = "<group>"; };
+		55287AAF22240B7900F7F6B0 /* quic_url.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quic_url.h; sourceTree = "<group>"; };
+		55287AB022240B7900F7F6B0 /* quic_client_message_loop_network_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quic_client_message_loop_network_helper.h; sourceTree = "<group>"; };
+		55287AB92226732C00F7F6B0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		5564DD1122268F9600FF07DF /* libnet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libnet.a; path = "third-party/quic/libnet.a"; sourceTree = "<group>"; };
+		5564DD1322268FF200FF07DF /* libbase.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbase.a; path = "third-party/quic/libbase.a"; sourceTree = "<group>"; };
+		5564DD152226902300FF07DF /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		5564DD17222690B500FF07DF /* libboringssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboringssl.a; path = "third-party/quic/libboringssl.a"; sourceTree = "<group>"; };
+		5564DD192226914A00FF07DF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		5564DD1B2226914F00FF07DF /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		5564DD1D2226915A00FF07DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5564DD1F2226915F00FF07DF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5564DD212226916900FF07DF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5564DD232226917100FF07DF /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		5564DD252226917F00FF07DF /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+		5564DD272226918E00FF07DF /* libbsm.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbsm.tbd; path = usr/lib/libbsm.tbd; sourceTree = SDKROOT; };
+		5564DD29222691B700FF07DF /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
+		5564DD2B222691BE00FF07DF /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		5564DD2D2226920100FF07DF /* liburl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liburl.a; path = "third-party/quic/liburl.a"; sourceTree = "<group>"; };
+		5564DD2F222692D200FF07DF /* libevent.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libevent.a; path = "third-party/quic/libevent.a"; sourceTree = "<group>"; };
+		5564DD31222697AD00FF07DF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		5564DD3322269A4C00FF07DF /* libchrome_zlib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libchrome_zlib.a; path = "third-party/quic/libchrome_zlib.a"; sourceTree = "<group>"; };
+		5564DD352226A9F800FF07DF /* libbase_i18n.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbase_i18n.a; path = "third-party/quic/libbase_i18n.a"; sourceTree = "<group>"; };
+		5564DD372226AA1400FF07DF /* libcrcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrcrypto.a; path = "third-party/quic/libcrcrypto.a"; sourceTree = "<group>"; };
+		5564DD392226AB4000FF07DF /* libicuuc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libicuuc.a; path = "third-party/quic/libicuuc.a"; sourceTree = "<group>"; };
+		5564DD3A2226AB4000FF07DF /* libicui18n.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libicui18n.a; path = "third-party/quic/libicui18n.a"; sourceTree = "<group>"; };
+		5564DD3D2226AB8300FF07DF /* libprotobuf_lite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libprotobuf_lite.a; path = "third-party/quic/libprotobuf_lite.a"; sourceTree = "<group>"; };
+		5564DD3F2226AF5000FF07DF /* libboringssl_asm.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboringssl_asm.a; path = "third-party/quic/libboringssl_asm.a"; sourceTree = "<group>"; };
+		5564DD412226B05900FF07DF /* libbase_static.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbase_static.a; path = "third-party/quic/libbase_static.a"; sourceTree = "<group>"; };
+		5564DD432226B06000FF07DF /* libmodp_b64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmodp_b64.a; path = "third-party/quic/libmodp_b64.a"; sourceTree = "<group>"; };
+		5564DD452226B1F900FF07DF /* libdynamic_annotations.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libdynamic_annotations.a; path = "third-party/quic/libdynamic_annotations.a"; sourceTree = "<group>"; };
+		5564DD472226B1FE00FF07DF /* libnetdns.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libnetdns.a; path = "third-party/quic/libnetdns.a"; sourceTree = "<group>"; };
+		5564DD492226B20600FF07DF /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		5564DD4C222780B100FF07DF /* libzlib_x86_simd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzlib_x86_simd.a; path = "third-party/quic/libzlib_x86_simd.a"; sourceTree = "<group>"; };
+		5564DD4E222783F500FF07DF /* libzlibex.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzlibex.a; path = "third-party/quic/libzlibex.a"; sourceTree = "<group>"; };
+		5564DD502227857D00FF07DF /* libc++abi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libc++abi.a"; path = "third-party/quic/libc++abi.a"; sourceTree = "<group>"; };
+		5564DD512227857D00FF07DF /* libc++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libc++.a"; path = "third-party/quic/libc++.a"; sourceTree = "<group>"; };
+		5564DD54222788FC00FF07DF /* libSystem.B.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libSystem.B.tbd; path = usr/lib/libSystem.B.tbd; sourceTree = SDKROOT; };
+		9700D107230EB7D700234FB3 /* LQQuicSeverSession.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LQQuicSeverSession.cpp; sourceTree = "<group>"; };
+		9700D108230EB7D700234FB3 /* LQQuicSeverSession.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LQQuicSeverSession.hpp; sourceTree = "<group>"; };
+		9727219C230BA06D000D4FAD /* quic_simple_server.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quic_simple_server.cc; sourceTree = "<group>"; };
+		9727219D230BA06E000D4FAD /* quic_simple_server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quic_simple_server.h; sourceTree = "<group>"; };
+		9727219F230BA0AB000D4FAD /* QuicTestServerCase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QuicTestServerCase.cpp; sourceTree = "<group>"; };
+		972721A0230BA0AB000D4FAD /* QuicTestServerCase.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = QuicTestServerCase.hpp; sourceTree = "<group>"; };
+		972721A2230BC9C9000D4FAD /* quic_simple_server_packet_writer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quic_simple_server_packet_writer.h; sourceTree = "<group>"; };
+		972721A3230BC9C9000D4FAD /* quic_simple_server_packet_writer.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quic_simple_server_packet_writer.cc; sourceTree = "<group>"; };
+		972721A4230BC9C9000D4FAD /* quic_simple_server_session_helper.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quic_simple_server_session_helper.cc; sourceTree = "<group>"; };
+		972721A5230BC9C9000D4FAD /* quic_simple_server_session_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quic_simple_server_session_helper.h; sourceTree = "<group>"; };
+		972721A8230BCC9D000D4FAD /* quic_simple_dispatcher.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quic_simple_dispatcher.cc; sourceTree = "<group>"; };
+		972721AC230BCC9D000D4FAD /* quic_simple_dispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quic_simple_dispatcher.h; sourceTree = "<group>"; };
+		972721B1230BD5A0000D4FAD /* quic_dispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quic_dispatcher.h; sourceTree = "<group>"; };
+		972721B2230BD5A1000D4FAD /* quic_dispatcher.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quic_dispatcher.cc; sourceTree = "<group>"; };
+		972721B4230BE689000D4FAD /* stateless_rejector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stateless_rejector.h; sourceTree = "<group>"; };
+		972721B6230BE68A000D4FAD /* quic_backend_response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quic_backend_response.h; sourceTree = "<group>"; };
+		972721B7230BE68A000D4FAD /* chlo_extractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chlo_extractor.h; sourceTree = "<group>"; };
+		972721B8230BE68A000D4FAD /* chlo_extractor.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chlo_extractor.cc; sourceTree = "<group>"; };
+		972721B9230BE68A000D4FAD /* stateless_rejector.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stateless_rejector.cc; sourceTree = "<group>"; };
+		972721BA230BE68A000D4FAD /* quic_backend_response.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quic_backend_response.cc; sourceTree = "<group>"; };
+		972721C1230BE6AC000D4FAD /* crypto_server_config.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = crypto_server_config.pb.cc; sourceTree = "<group>"; };
+		972721C2230BE6AC000D4FAD /* cached_network_parameters.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cached_network_parameters.pb.h; sourceTree = "<group>"; };
+		972721C3230BE6AC000D4FAD /* cached_network_parameters.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cached_network_parameters.pb.cc; sourceTree = "<group>"; };
+		972721C4230BE6AC000D4FAD /* source_address_token.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = source_address_token.pb.h; sourceTree = "<group>"; };
+		972721C5230BE6AC000D4FAD /* source_address_token.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = source_address_token.pb.cc; sourceTree = "<group>"; };
+		972721C6230BE6AC000D4FAD /* crypto_server_config.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypto_server_config.pb.h; sourceTree = "<group>"; };
+		972721CA230BE7D6000D4FAD /* quic_time_wait_list_manager.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quic_time_wait_list_manager.cc; sourceTree = "<group>"; };
+		972721CC230BE7D7000D4FAD /* quic_time_wait_list_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quic_time_wait_list_manager.h; sourceTree = "<group>"; };
+		97272210230BEF21000D4FAD /* quicServer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = quicServer; sourceTree = BUILT_PRODUCTS_DIR; };
+		97272211230BEF98000D4FAD /* quicServerMain.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = quicServerMain.cpp; sourceTree = "<group>"; };
+		973CE5492316A0A200D593B1 /* QuicConnectionTraceVisitor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QuicConnectionTraceVisitor.cpp; sourceTree = "<group>"; };
+		973CE54A2316A0A200D593B1 /* QuicConnectionTraceVisitor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = QuicConnectionTraceVisitor.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55287A7F22238FD700F7F6B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5564DD55222788FC00FF07DF /* libSystem.B.tbd in Frameworks */,
+				5564DD522227857D00FF07DF /* libc++abi.a in Frameworks */,
+				5564DD532227857E00FF07DF /* libc++.a in Frameworks */,
+				5564DD4A2226B20600FF07DF /* AppKit.framework in Frameworks */,
+				5564DD282226918E00FF07DF /* libbsm.tbd in Frameworks */,
+				5564DD2C222691BE00FF07DF /* IOKit.framework in Frameworks */,
+				5564DD262226917F00FF07DF /* ApplicationServices.framework in Frameworks */,
+				5564DD242226917100FF07DF /* libresolv.tbd in Frameworks */,
+				5564DD222226916900FF07DF /* SystemConfiguration.framework in Frameworks */,
+				5564DD202226915F00FF07DF /* Security.framework in Frameworks */,
+				5564DD1E2226915A00FF07DF /* Foundation.framework in Frameworks */,
+				5564DD1C2226915000FF07DF /* CoreServices.framework in Frameworks */,
+				5564DD1A2226914B00FF07DF /* CFNetwork.framework in Frameworks */,
+				5564DD18222690B500FF07DF /* libboringssl.a in Frameworks */,
+				5564DD162226902300FF07DF /* CoreFoundation.framework in Frameworks */,
+				5564DD422226B05A00FF07DF /* libbase_static.a in Frameworks */,
+				5564DD1422268FF300FF07DF /* libbase.a in Frameworks */,
+				5564DD442226B06000FF07DF /* libmodp_b64.a in Frameworks */,
+				5564DD1222268F9700FF07DF /* libnet.a in Frameworks */,
+				5564DD2E2226920100FF07DF /* liburl.a in Frameworks */,
+				5564DD30222692D300FF07DF /* libevent.a in Frameworks */,
+				5564DD362226A9F800FF07DF /* libbase_i18n.a in Frameworks */,
+				5564DD462226B1F900FF07DF /* libdynamic_annotations.a in Frameworks */,
+				5564DD382226AA1400FF07DF /* libcrcrypto.a in Frameworks */,
+				5564DD482226B1FF00FF07DF /* libnetdns.a in Frameworks */,
+				5564DD3B2226AB4000FF07DF /* libicuuc.a in Frameworks */,
+				5564DD3C2226AB4000FF07DF /* libicui18n.a in Frameworks */,
+				5564DD3E2226AB8300FF07DF /* libprotobuf_lite.a in Frameworks */,
+				5564DD402226AF5000FF07DF /* libboringssl_asm.a in Frameworks */,
+				5564DD4B2227808E00FF07DF /* libchrome_zlib.a in Frameworks */,
+				5564DD4D222780B100FF07DF /* libzlib_x86_simd.a in Frameworks */,
+				5564DD4F222783F500FF07DF /* libzlibex.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		972721EB230BEF21000D4FAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				972721EC230BEF21000D4FAD /* libSystem.B.tbd in Frameworks */,
+				972721ED230BEF21000D4FAD /* libc++abi.a in Frameworks */,
+				972721EE230BEF21000D4FAD /* libc++.a in Frameworks */,
+				972721EF230BEF21000D4FAD /* AppKit.framework in Frameworks */,
+				972721F0230BEF21000D4FAD /* libbsm.tbd in Frameworks */,
+				972721F1230BEF21000D4FAD /* IOKit.framework in Frameworks */,
+				972721F2230BEF21000D4FAD /* ApplicationServices.framework in Frameworks */,
+				972721F3230BEF21000D4FAD /* libresolv.tbd in Frameworks */,
+				972721F4230BEF21000D4FAD /* SystemConfiguration.framework in Frameworks */,
+				972721F5230BEF21000D4FAD /* Security.framework in Frameworks */,
+				972721F6230BEF21000D4FAD /* Foundation.framework in Frameworks */,
+				972721F7230BEF21000D4FAD /* CoreServices.framework in Frameworks */,
+				972721F8230BEF21000D4FAD /* CFNetwork.framework in Frameworks */,
+				972721F9230BEF21000D4FAD /* libboringssl.a in Frameworks */,
+				972721FA230BEF21000D4FAD /* CoreFoundation.framework in Frameworks */,
+				972721FB230BEF21000D4FAD /* libbase_static.a in Frameworks */,
+				972721FC230BEF21000D4FAD /* libbase.a in Frameworks */,
+				972721FD230BEF21000D4FAD /* libmodp_b64.a in Frameworks */,
+				972721FE230BEF21000D4FAD /* libnet.a in Frameworks */,
+				972721FF230BEF21000D4FAD /* liburl.a in Frameworks */,
+				97272200230BEF21000D4FAD /* libevent.a in Frameworks */,
+				97272201230BEF21000D4FAD /* libbase_i18n.a in Frameworks */,
+				97272202230BEF21000D4FAD /* libdynamic_annotations.a in Frameworks */,
+				97272203230BEF21000D4FAD /* libcrcrypto.a in Frameworks */,
+				97272204230BEF21000D4FAD /* libnetdns.a in Frameworks */,
+				97272205230BEF21000D4FAD /* libicuuc.a in Frameworks */,
+				97272206230BEF21000D4FAD /* libicui18n.a in Frameworks */,
+				97272207230BEF21000D4FAD /* libprotobuf_lite.a in Frameworks */,
+				97272208230BEF21000D4FAD /* libboringssl_asm.a in Frameworks */,
+				97272209230BEF21000D4FAD /* libchrome_zlib.a in Frameworks */,
+				9727220A230BEF21000D4FAD /* libzlib_x86_simd.a in Frameworks */,
+				9727220B230BEF21000D4FAD /* libzlibex.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55287A7922238FD700F7F6B0 = {
+			isa = PBXGroup;
+			children = (
+				55287A8422238FD700F7F6B0 /* quicTest */,
+				55287A8322238FD700F7F6B0 /* Products */,
+				55287A942223914C00F7F6B0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		55287A8322238FD700F7F6B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55287A8222238FD700F7F6B0 /* quicClient */,
+				97272210230BEF21000D4FAD /* quicServer */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55287A8422238FD700F7F6B0 /* quicTest */ = {
+			isa = PBXGroup;
+			children = (
+				55287A8C2223904000F7F6B0 /* Proxy */,
+				55287A8522238FD700F7F6B0 /* quicClientMain.cpp */,
+				97272211230BEF98000D4FAD /* quicServerMain.cpp */,
+			);
+			path = quicTest;
+			sourceTree = "<group>";
+		};
+		55287A8C2223904000F7F6B0 /* Proxy */ = {
+			isa = PBXGroup;
+			children = (
+				9727219B230ABF2C000D4FAD /* server */,
+				55287AA6222404F800F7F6B0 /* base */,
+				55287A8D2223904000F7F6B0 /* client */,
+			);
+			path = Proxy;
+			sourceTree = "<group>";
+		};
+		55287A8D2223904000F7F6B0 /* client */ = {
+			isa = PBXGroup;
+			children = (
+				55287A8E2223904000F7F6B0 /* QuicTestCase.hpp */,
+				55287A902223904000F7F6B0 /* QuicTestCase.cpp */,
+				55287A8F2223904000F7F6B0 /* LQQuicSession.cpp */,
+				55287A912223904000F7F6B0 /* LQQuicSession.hpp */,
+				55287AA32223E7DB00F7F6B0 /* LQQuicClient.cpp */,
+				55287AA42223E7DB00F7F6B0 /* LQQuicClient.hpp */,
+			);
+			path = client;
+			sourceTree = "<group>";
+		};
+		55287A942223914C00F7F6B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5564DD54222788FC00FF07DF /* libSystem.B.tbd */,
+				5564DD512227857D00FF07DF /* libc++.a */,
+				5564DD502227857D00FF07DF /* libc++abi.a */,
+				5564DD4E222783F500FF07DF /* libzlibex.a */,
+				5564DD4C222780B100FF07DF /* libzlib_x86_simd.a */,
+				5564DD492226B20600FF07DF /* AppKit.framework */,
+				5564DD472226B1FE00FF07DF /* libnetdns.a */,
+				5564DD452226B1F900FF07DF /* libdynamic_annotations.a */,
+				5564DD432226B06000FF07DF /* libmodp_b64.a */,
+				5564DD412226B05900FF07DF /* libbase_static.a */,
+				5564DD3F2226AF5000FF07DF /* libboringssl_asm.a */,
+				5564DD3D2226AB8300FF07DF /* libprotobuf_lite.a */,
+				5564DD3A2226AB4000FF07DF /* libicui18n.a */,
+				5564DD392226AB4000FF07DF /* libicuuc.a */,
+				5564DD372226AA1400FF07DF /* libcrcrypto.a */,
+				5564DD352226A9F800FF07DF /* libbase_i18n.a */,
+				5564DD3322269A4C00FF07DF /* libchrome_zlib.a */,
+				5564DD31222697AD00FF07DF /* libz.tbd */,
+				5564DD2F222692D200FF07DF /* libevent.a */,
+				5564DD2D2226920100FF07DF /* liburl.a */,
+				5564DD2B222691BE00FF07DF /* IOKit.framework */,
+				5564DD29222691B700FF07DF /* CoreAudioKit.framework */,
+				5564DD272226918E00FF07DF /* libbsm.tbd */,
+				5564DD252226917F00FF07DF /* ApplicationServices.framework */,
+				5564DD232226917100FF07DF /* libresolv.tbd */,
+				5564DD212226916900FF07DF /* SystemConfiguration.framework */,
+				5564DD1F2226915F00FF07DF /* Security.framework */,
+				5564DD1D2226915A00FF07DF /* Foundation.framework */,
+				5564DD1B2226914F00FF07DF /* CoreServices.framework */,
+				5564DD192226914A00FF07DF /* CFNetwork.framework */,
+				5564DD17222690B500FF07DF /* libboringssl.a */,
+				5564DD152226902300FF07DF /* CoreFoundation.framework */,
+				5564DD1322268FF200FF07DF /* libbase.a */,
+				5564DD1122268F9600FF07DF /* libnet.a */,
+				55287AB92226732C00F7F6B0 /* libc++.tbd */,
+				55287A952223914D00F7F6B0 /* libcronet.74.0.3704.0.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		55287AA6222404F800F7F6B0 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				55287A9D2223E4E600F7F6B0 /* QuicCommon.h */,
+				55287A9A2223E2C600F7F6B0 /* LQQuicStream.cpp */,
+				55287A9B2223E2C600F7F6B0 /* LQQuicStream.hpp */,
+				55287AAA22240B7800F7F6B0 /* quic_client_message_loop_network_helper.cc */,
+				55287AB022240B7900F7F6B0 /* quic_client_message_loop_network_helper.h */,
+				55287AAC22240B7900F7F6B0 /* quic_url.cc */,
+				55287AAF22240B7900F7F6B0 /* quic_url.h */,
+				55287AA7222404F800F7F6B0 /* quic_client_base.cc */,
+				55287AA8222404F800F7F6B0 /* quic_client_base.h */,
+				973CE5492316A0A200D593B1 /* QuicConnectionTraceVisitor.cpp */,
+				973CE54A2316A0A200D593B1 /* QuicConnectionTraceVisitor.hpp */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		9727219B230ABF2C000D4FAD /* server */ = {
+			isa = PBXGroup;
+			children = (
+				972721C0230BE6AC000D4FAD /* proto */,
+				972721CA230BE7D6000D4FAD /* quic_time_wait_list_manager.cc */,
+				972721CC230BE7D7000D4FAD /* quic_time_wait_list_manager.h */,
+				972721B8230BE68A000D4FAD /* chlo_extractor.cc */,
+				972721B7230BE68A000D4FAD /* chlo_extractor.h */,
+				972721BA230BE68A000D4FAD /* quic_backend_response.cc */,
+				972721B6230BE68A000D4FAD /* quic_backend_response.h */,
+				972721B9230BE68A000D4FAD /* stateless_rejector.cc */,
+				972721B4230BE689000D4FAD /* stateless_rejector.h */,
+				972721B2230BD5A1000D4FAD /* quic_dispatcher.cc */,
+				972721B1230BD5A0000D4FAD /* quic_dispatcher.h */,
+				972721A8230BCC9D000D4FAD /* quic_simple_dispatcher.cc */,
+				972721AC230BCC9D000D4FAD /* quic_simple_dispatcher.h */,
+				972721A3230BC9C9000D4FAD /* quic_simple_server_packet_writer.cc */,
+				972721A2230BC9C9000D4FAD /* quic_simple_server_packet_writer.h */,
+				972721A4230BC9C9000D4FAD /* quic_simple_server_session_helper.cc */,
+				972721A5230BC9C9000D4FAD /* quic_simple_server_session_helper.h */,
+				9727219C230BA06D000D4FAD /* quic_simple_server.cc */,
+				9727219D230BA06E000D4FAD /* quic_simple_server.h */,
+				9727219F230BA0AB000D4FAD /* QuicTestServerCase.cpp */,
+				972721A0230BA0AB000D4FAD /* QuicTestServerCase.hpp */,
+				9700D107230EB7D700234FB3 /* LQQuicSeverSession.cpp */,
+				9700D108230EB7D700234FB3 /* LQQuicSeverSession.hpp */,
+			);
+			path = server;
+			sourceTree = "<group>";
+		};
+		972721C0230BE6AC000D4FAD /* proto */ = {
+			isa = PBXGroup;
+			children = (
+				972721C1230BE6AC000D4FAD /* crypto_server_config.pb.cc */,
+				972721C2230BE6AC000D4FAD /* cached_network_parameters.pb.h */,
+				972721C3230BE6AC000D4FAD /* cached_network_parameters.pb.cc */,
+				972721C4230BE6AC000D4FAD /* source_address_token.pb.h */,
+				972721C5230BE6AC000D4FAD /* source_address_token.pb.cc */,
+				972721C6230BE6AC000D4FAD /* crypto_server_config.pb.h */,
+			);
+			path = proto;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55287A8122238FD700F7F6B0 /* quicClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55287A8922238FD700F7F6B0 /* Build configuration list for PBXNativeTarget "quicClient" */;
+			buildPhases = (
+				55287A7E22238FD700F7F6B0 /* Sources */,
+				55287A7F22238FD700F7F6B0 /* Frameworks */,
+				55287AB822253D3600F7F6B0 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = quicClient;
+			productName = quicTest;
+			productReference = 55287A8222238FD700F7F6B0 /* quicClient */;
+			productType = "com.apple.product-type.tool";
+		};
+		972721D0230BEF21000D4FAD /* quicServer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9727220D230BEF21000D4FAD /* Build configuration list for PBXNativeTarget "quicServer" */;
+			buildPhases = (
+				972721D1230BEF21000D4FAD /* Sources */,
+				972721EB230BEF21000D4FAD /* Frameworks */,
+				9727220C230BEF21000D4FAD /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = quicServer;
+			productName = quicTest;
+			productReference = 97272210230BEF21000D4FAD /* quicServer */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55287A7A22238FD700F7F6B0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = wb_Leo1;
+				TargetAttributes = {
+					55287A8122238FD700F7F6B0 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 55287A7D22238FD700F7F6B0 /* Build configuration list for PBXProject "quicTest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 55287A7922238FD700F7F6B0;
+			productRefGroup = 55287A8322238FD700F7F6B0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55287A8122238FD700F7F6B0 /* quicClient */,
+				972721D0230BEF21000D4FAD /* quicServer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55287AB822253D3600F7F6B0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# cp -f ${SRCROOT}/third-party/quic/libcronet.74.0.3704.0.dylib ${BUILT_PRODUCTS_DIR}/\n";
+			showEnvVarsInLog = 0;
+		};
+		9727220C230BEF21000D4FAD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# cp -f ${SRCROOT}/third-party/quic/libcronet.74.0.3704.0.dylib ${BUILT_PRODUCTS_DIR}/\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55287A7E22238FD700F7F6B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55287A9C2223E2C600F7F6B0 /* LQQuicStream.cpp in Sources */,
+				55287A932223904000F7F6B0 /* QuicTestCase.cpp in Sources */,
+				55287A8622238FD700F7F6B0 /* quicClientMain.cpp in Sources */,
+				55287AA9222404F800F7F6B0 /* quic_client_base.cc in Sources */,
+				55287AA52223E7DB00F7F6B0 /* LQQuicClient.cpp in Sources */,
+				55287A922223904000F7F6B0 /* LQQuicSession.cpp in Sources */,
+				55287AB222240B7900F7F6B0 /* quic_client_message_loop_network_helper.cc in Sources */,
+				55287AB422240B7900F7F6B0 /* quic_url.cc in Sources */,
+				973CE54B2316A0A200D593B1 /* QuicConnectionTraceVisitor.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		972721D1230BEF21000D4FAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9700D10D230F92AF00234FB3 /* stateless_rejector.cc in Sources */,
+				9700D10C230F927A00234FB3 /* quic_backend_response.cc in Sources */,
+				973CE54C2316A0A200D593B1 /* QuicConnectionTraceVisitor.cpp in Sources */,
+				9700D10B230F927300234FB3 /* chlo_extractor.cc in Sources */,
+				9700D10A230F923200234FB3 /* quic_simple_server_packet_writer.cc in Sources */,
+				972721D2230BEF21000D4FAD /* QuicTestServerCase.cpp in Sources */,
+				972721D6230BEF21000D4FAD /* quic_simple_dispatcher.cc in Sources */,
+				972721D7230BEF21000D4FAD /* source_address_token.pb.cc in Sources */,
+				972721DB230BEF21000D4FAD /* crypto_server_config.pb.cc in Sources */,
+				972721DD230BEF21000D4FAD /* quic_time_wait_list_manager.cc in Sources */,
+				972721E3230BEF21000D4FAD /* quic_simple_server_session_helper.cc in Sources */,
+				972721E4230BEF21000D4FAD /* cached_network_parameters.pb.cc in Sources */,
+				97272212230BEF98000D4FAD /* quicServerMain.cpp in Sources */,
+				978307BF231383BC00FDA0C2 /* LQQuicStream.cpp in Sources */,
+				9700D109230EB7D700234FB3 /* LQQuicSeverSession.cpp in Sources */,
+				972721E9230BEF21000D4FAD /* quic_dispatcher.cc in Sources */,
+				972721EA230BEF21000D4FAD /* quic_simple_server.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		55287A8722238FD700F7F6B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		55287A8822238FD700F7F6B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		55287A8A22238FD700F7F6B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/third-party/quic/include",
+					"$(PROJECT_DIR)/third-party/quic/include/third_party/protobuf/src",
+					"$(PROJECT_DIR)/third-party/quic/include/third_party/boringssl/src/include",
+					"$(PROJECT_DIR)/third-party/quic/include/buildtools/third_party/libc++/trunk/include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/third-party/quic",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DNO_TCMALLOC",
+					"-DFULL_SAFE_BROWSING",
+					"-DSAFE_BROWSING_CSD",
+					"-DSAFE_BROWSING_DB_LOCAL",
+					"-DCHROMIUM_BUILD",
+					"-D_LIBCPP_HAS_NO_ALIGNED_ALLOCATION",
+					"-DCR_XCODE_VERSION=1010",
+					"-DCR_CLANG_REVISION=\\\"353250-1\\\"",
+					"-D__STDC_CONSTANT_MACROS",
+					"-D__STDC_FORMAT_MACROS",
+					"-D_LIBCPP_ABI_UNSTABLE",
+					"-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS",
+					"-D_LIBCXXABI_DISABLE_VISIBILITY_ANNOTATIONS",
+					"-DCR_LIBCXX_REVISION=349080",
+					"-DCR_LIBCXXABI_REVISION=347903",
+					"-D_LIBCPP_ENABLE_NODISCARD",
+					"-D__ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORE=0",
+					"-D_DEBUG",
+					"-DDYNAMIC_ANNOTATIONS_ENABLED=1",
+					"-DWTF_USE_DYNAMIC_ANNOTATIONS=1",
+					"-DGOOGLE_PROTOBUF_NO_RTTI",
+					"-DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER",
+					"-DHAVE_PTHREAD",
+					"-nostdinc++",
+				);
+				OTHER_LDFLAGS = "-nostdlib";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		55287A8B22238FD700F7F6B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					NO_TCMALLOC,
+					CHROMIUM_BUILD,
+					__STDC_CONSTANT_MACROS,
+					__STDC_FORMAT_MACROS,
+					"_FORTIFY_SOURCE=2",
+					"DYNAMIC_ANNOTATIONS_ENABLED=0",
+					"NS_BLOCK_ASSERTIONS=1",
+					GOOGLE_PROTOBUF_NO_RTTI,
+					GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER,
+					HAVE_PTHREAD,
+					DLOPEN_KERBEROS,
+					COMPONENT_BUILD,
+					NET_IMPLEMENTATION,
+					"U_USING_ICU_NAMESPACE=0",
+					"U_ENABLE_DYLOAD=0",
+					"USE_CHROMIUM_ICU=1",
+					U_STATIC_IMPLEMENTATION,
+					"ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/third-party/quic/include",
+					"$(PROJECT_DIR)/third-party/quic/include/third_party/protobuf/src",
+					"$(PROJECT_DIR)/third-party/quic/include/third_party/boringssl/src/include",
+					"$(PROJECT_DIR)/third-party/quic/include/buildtools/third_party/libc++/trunk/include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/third-party/quic",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DNO_TCMALLOC",
+					"-DFULL_SAFE_BROWSING",
+					"-DSAFE_BROWSING_CSD",
+					"-DSAFE_BROWSING_DB_LOCAL",
+					"-DCHROMIUM_BUILD",
+					"-D_LIBCPP_HAS_NO_ALIGNED_ALLOCATION",
+					"-DCR_XCODE_VERSION=1010",
+					"-DCR_CLANG_REVISION=\\\"353250-1\\\"",
+					"-D__STDC_CONSTANT_MACROS",
+					"-D__STDC_FORMAT_MACROS",
+					"-D_LIBCPP_ABI_UNSTABLE",
+					"-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS",
+					"-D_LIBCXXABI_DISABLE_VISIBILITY_ANNOTATIONS",
+					"-DCR_LIBCXX_REVISION=349080",
+					"-DCR_LIBCXXABI_REVISION=347903",
+					"-D_LIBCPP_ENABLE_NODISCARD",
+					"-D__ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORE=0",
+					"-D_DEBUG",
+					"-DDYNAMIC_ANNOTATIONS_ENABLED=1",
+					"-DWTF_USE_DYNAMIC_ANNOTATIONS=1",
+					"-DGOOGLE_PROTOBUF_NO_RTTI",
+					"-DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER",
+					"-DHAVE_PTHREAD",
+					"-nostdinc++",
+				);
+				OTHER_LDFLAGS = "-nostdlib";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9727220E230BEF21000D4FAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/third-party/quic/include",
+					"$(PROJECT_DIR)/third-party/quic/include/third_party/protobuf/src",
+					"$(PROJECT_DIR)/third-party/quic/include/third_party/boringssl/src/include",
+					"$(PROJECT_DIR)/third-party/quic/include/buildtools/third_party/libc++/trunk/include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/third-party/quic",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DNO_TCMALLOC",
+					"-DFULL_SAFE_BROWSING",
+					"-DSAFE_BROWSING_CSD",
+					"-DSAFE_BROWSING_DB_LOCAL",
+					"-DCHROMIUM_BUILD",
+					"-D_LIBCPP_HAS_NO_ALIGNED_ALLOCATION",
+					"-DCR_XCODE_VERSION=1010",
+					"-DCR_CLANG_REVISION=\\\"353250-1\\\"",
+					"-D__STDC_CONSTANT_MACROS",
+					"-D__STDC_FORMAT_MACROS",
+					"-D_LIBCPP_ABI_UNSTABLE",
+					"-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS",
+					"-D_LIBCXXABI_DISABLE_VISIBILITY_ANNOTATIONS",
+					"-DCR_LIBCXX_REVISION=349080",
+					"-DCR_LIBCXXABI_REVISION=347903",
+					"-D_LIBCPP_ENABLE_NODISCARD",
+					"-D__ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORE=0",
+					"-D_DEBUG",
+					"-DDYNAMIC_ANNOTATIONS_ENABLED=1",
+					"-DWTF_USE_DYNAMIC_ANNOTATIONS=1",
+					"-DGOOGLE_PROTOBUF_NO_RTTI",
+					"-DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER",
+					"-DHAVE_PTHREAD",
+					"-nostdinc++",
+				);
+				OTHER_LDFLAGS = "-nostdlib";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9727220F230BEF21000D4FAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					NO_TCMALLOC,
+					CHROMIUM_BUILD,
+					__STDC_CONSTANT_MACROS,
+					__STDC_FORMAT_MACROS,
+					"_FORTIFY_SOURCE=2",
+					"DYNAMIC_ANNOTATIONS_ENABLED=0",
+					"NS_BLOCK_ASSERTIONS=1",
+					GOOGLE_PROTOBUF_NO_RTTI,
+					GOOGLE_PROTOBUF_NO_STATIC_INITIALIZER,
+					HAVE_PTHREAD,
+					DLOPEN_KERBEROS,
+					COMPONENT_BUILD,
+					NET_IMPLEMENTATION,
+					"U_USING_ICU_NAMESPACE=0",
+					"U_ENABLE_DYLOAD=0",
+					"USE_CHROMIUM_ICU=1",
+					U_STATIC_IMPLEMENTATION,
+					"ICU_UTIL_DATA_IMPL=ICU_UTIL_DATA_FILE",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/third-party/quic/include",
+					"$(PROJECT_DIR)/third-party/quic/include/third_party/protobuf/src",
+					"$(PROJECT_DIR)/third-party/quic/include/third_party/boringssl/src/include",
+					"$(PROJECT_DIR)/third-party/quic/include/buildtools/third_party/libc++/trunk/include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/third-party/quic",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DNO_TCMALLOC",
+					"-DFULL_SAFE_BROWSING",
+					"-DSAFE_BROWSING_CSD",
+					"-DSAFE_BROWSING_DB_LOCAL",
+					"-DCHROMIUM_BUILD",
+					"-D_LIBCPP_HAS_NO_ALIGNED_ALLOCATION",
+					"-DCR_XCODE_VERSION=1010",
+					"-DCR_CLANG_REVISION=\\\"353250-1\\\"",
+					"-D__STDC_CONSTANT_MACROS",
+					"-D__STDC_FORMAT_MACROS",
+					"-D_LIBCPP_ABI_UNSTABLE",
+					"-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS",
+					"-D_LIBCXXABI_DISABLE_VISIBILITY_ANNOTATIONS",
+					"-DCR_LIBCXX_REVISION=349080",
+					"-DCR_LIBCXXABI_REVISION=347903",
+					"-D_LIBCPP_ENABLE_NODISCARD",
+					"-D__ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORE=0",
+					"-D_DEBUG",
+					"-DDYNAMIC_ANNOTATIONS_ENABLED=1",
+					"-DWTF_USE_DYNAMIC_ANNOTATIONS=1",
+					"-DGOOGLE_PROTOBUF_NO_RTTI",
+					"-DGOOGLE_PROTOBUF_NO_STATIC_INITIALIZER",
+					"-DHAVE_PTHREAD",
+					"-nostdinc++",
+				);
+				OTHER_LDFLAGS = "-nostdlib";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55287A7D22238FD700F7F6B0 /* Build configuration list for PBXProject "quicTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55287A8722238FD700F7F6B0 /* Debug */,
+				55287A8822238FD700F7F6B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55287A8922238FD700F7F6B0 /* Build configuration list for PBXNativeTarget "quicClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55287A8A22238FD700F7F6B0 /* Debug */,
+				55287A8B22238FD700F7F6B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9727220D230BEF21000D4FAD /* Build configuration list for PBXNativeTarget "quicServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9727220E230BEF21000D4FAD /* Debug */,
+				9727220F230BEF21000D4FAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 55287A7A22238FD700F7F6B0 /* Project object */;
+}
